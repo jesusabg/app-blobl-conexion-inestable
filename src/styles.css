@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+container-cards{
+    width: 500px;
+    height:500px;
+}
+
+#myDIV{
+        width: 100%;
+        min-width: 600px;
+        height: 250px; 
+        object-fit: contain;
+}
+#myDIV img{
+    border-radius: 20px;
+}
+#myDIV{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 400px;
+    max-width: 800px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 80px; 
+}
+
+.form-control-lg{
+    background-color: rgba(127, 255, 212, 0);
+    color: rgb(255, 255, 255);
+    margin: 0 auto;
+}

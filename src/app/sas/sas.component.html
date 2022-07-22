@@ -1,0 +1,39 @@
+<h2 class="text-center mb-4 ">Carga de archivos con conexión intermitente</h2>
+<!-- <table>
+  <tr>
+    <td></td>
+    <td><input type="file" (change)="imageSelected($event.target.files[0])"></td>
+  </tr>
+  <tr>
+    <td>Insert SAS:</td><td><input type="text" (change)="setSas($event)" size="90"></td>
+  </tr>
+  <tr>
+    <td>Current SAS:</td>
+    <td>{{sas}}</td>
+  </tr>
+</table> -->
+<h4 class="text-center">Lista de archivos en Blob Storage</h4>
+<ul class="list-group" style="width: 60%; margin:0 auto; min-width: 400px">
+
+  <li class="list-group-item list-group-item-action" style="display:flex; justify-content: space-evenly;">
+    <input type="file" (change)="imageSelected($event.target.files[0])" class="m-2 pb-5 form-control form-control-lg">
+  </li>
+
+  <li class="list-group-item list-group-item-action" *ngFor="let pic of picturesList"
+    style="display:flex;  justify-content: center;">
+    <h5 class="col-6" style="font-size: 15px ;"> Nombre: {{pic}}</h5>
+    <div style="gap: 15px ; display: flex;" class="col-6">
+      <button (click)="deleteImage(pic)" class="btn btn-danger btn-lg">Borrar</button>
+      <button (click)="downloadImage(pic)" download="pic" class="btn btn-success">Vista previa</button>
+    </div>
+  </li>
+</ul>
+<hr>
+<h3 class="text-center">Vista previa</h3>
+<div id="myDIV" *ngIf="picturesList.length >0">
+  <img id="vistaPreviaImage" class="card-img"
+    src="https://www.pulsorunner.com/wp-content/uploads/2014/10/default-img.gif">
+</div>
+
+<!-- <h4>Downloaded</h4>
+<img *ngFor="let blob of picturesDownloaded" src="{{blob}}" height="100px"> -->
